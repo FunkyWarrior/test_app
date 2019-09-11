@@ -1,12 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import App from './App'
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import {BrowserRouter} from "react-router-dom";
+import {store} from './store'
+import {Provider} from "react-redux";
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
+import "./style/header.scss"
+import "./style/app.scss"
+import "./style/main.scss"
+import "./style/profile.scss"
+import "./style/person-card.scss"
+import "./style/contacts.scss"
+import "./style/auth.scss"
+import "./style/loader.scss"
+
+ReactDOM.render(
+    <Provider store={store}>
+        <BrowserRouter>
+            <App/>
+        </BrowserRouter>
+    </Provider>,
+    document.getElementById('root')
+);
 serviceWorker.unregister();

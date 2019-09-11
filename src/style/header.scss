@@ -1,0 +1,56 @@
+.header {
+  z-index: 5;
+  background: rgba(212,228,239,1);
+  background: linear-gradient(to top, rgba(212,228,239,1) 0%, rgba(212,228,239,1) 48%, rgba(134,174,204,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d4e4ef', endColorstr='#86aecc', GradientType=0 );
+  position:fixed;
+  width:100vw;
+  height: 100px;
+  box-shadow: 0 1px 12px 7px rgba(0,0,0,0.75);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 20%;
+    height: 100%;
+  }
+
+  &__left {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin:20px;
+  }
+
+  &__left>*{
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  &__img {
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 9px -6px 18px 1px rgba(0,0,0,0.75);
+    transition: all 0.4s;
+  }
+  &__img:hover{
+    box-shadow: 0px 0px 33px 11px rgba(75, 152, 83, 0.75);
+  }
+}
+
+a {
+  color: #1100ff;
+  text-decoration: none;
+  outline: none;
+  transition: all 0.4s;
+
+}
+a:hover {color:#FF00FF;}
+a:active {color:#0000FF;}
+
+#current {
+  color: #8e888e;
+}

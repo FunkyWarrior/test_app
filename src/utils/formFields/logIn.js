@@ -1,0 +1,20 @@
+export const logInForm = [
+    {
+        id:1,
+        type:'email',
+        value:"",
+        name:'log_email',
+        placeholder:'E-mail',
+        required:true
+    },
+    {
+        id:2,
+        type:'password',
+        value:"",
+        name:'log_password',
+        placeholder:'Password',
+        minLength:6,
+        maxLength:25,
+        required:true
+    }
+];

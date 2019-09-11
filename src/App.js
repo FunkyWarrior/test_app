@@ -1,26 +1,66 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {connect} from 'react-redux';
+import {Switch} from "react-router-dom";
+import {route} from './utils/formFields/route'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import {clearUser} from './actions/auth'
+import {clearContacts} from './actions/contacts'
+import {clearMainInfo} from './actions/main'
+
+import {checkHash} from './utils/funcs/funcs'
+
+import Header from "./components/Header";
+import {PrivateRoute} from "./components/PrivateRouter";
+
+
+
+export class App extends React.Component {
+
+    componentDidMount() {
+        window.addEventListener = ("hashchange", checkHash)
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener = ("hashchange", checkHash)
+    }
+
+
+    render() {
+        const {user, clearUser, showHeader,clearContacts,clearMainInfo} = this.props;
+        return (
+            <>
+                {showHeader && <Header user={user} clearUser={clearUser} clearContacts={clearContacts} clearMainInfo={clearMainInfo}/>}
+                <main>
+                    <div className='container'>
+                        <Switch>
+                            {route.map(el => (
+                                <PrivateRoute
+                                    protectedRoute={el.protected}
+                                    key={el.id}
+                                    exact={el.exact}
+                                    path={el.path}
+                                    component={el.component}
+                                />
+                            ))}
+                        </Switch>
+                    </div>
+                </main>
+            </>
+        );
+    }
 }
 
-export default App;
+const mapStateToProps = state => {
+    return {
+        user: state.auth.user,
+        showHeader: state.auth.showHeader
+    }
+};
+
+const mapDispatchToProps = {
+    clearUser,
+    clearContacts,
+    clearMainInfo
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)

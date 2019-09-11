@@ -1,0 +1,8 @@
+.contacts {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.contacts>*{
+  margin:10px 0;
+}
