@@ -1,7 +1,7 @@
 import * as types from '../actionsTypes/actionsTypes'
 
 const defaultState = {
-    mainInfo:localStorage.getItem('mainInfo') ? JSON.parse(localStorage.getItem('mainInfo')) : null,
+    mainInfo:null,
     error:null,
     isFetching:false,
 };
@@ -28,14 +28,6 @@ export const mainReducer = (state = defaultState, action) => {
             return {
                 ...state,
                 error:action.payload,
-                isFetching: false
-            };
-        }
-
-        case types.CLEAR_MAIN_INFO : {
-            return {
-                ...state,
-                mainInfo:null,
                 isFetching: false
             };
         }

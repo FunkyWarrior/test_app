@@ -1,7 +1,7 @@
 import * as types from '../actionsTypes/actionsTypes'
 
 const defaultState = {
-    user:localStorage.getItem('userKey') ? JSON.parse(localStorage.getItem('userKey')) : null,
+    user:JSON.parse(localStorage.getItem('userKey')),
     showHeader:true,
     error:null,
     isFetching:false,

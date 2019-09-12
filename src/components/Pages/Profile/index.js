@@ -1,13 +1,16 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
-import PersonCard from "../PersonCard";
+import PersonCard from "../../PersonCard";
 
 class Profile extends Component {
     render() {
         const {user} = this.props;
         return (
             <div className='profile'>
-                {user && <PersonCard user={user}/>}
+                {user ?
+                    <PersonCard user={user}/> :
+                    null
+                }
             </div>
         );
     }

@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
-import {getUserByFb, changeShowHeaderFlag} from '../../actions/auth'
+import {getUserByFb, changeShowHeaderFlag} from '../../../actions/auth'
 import {Redirect} from "react-router-dom";
-import Loader from "../Loader";
-import Input from "../Input";
-import {logInForm} from "../../utils/formFields/logIn"
+import Loader from "../../Loader";
+import Input from "../../Input";
+import {logInForm} from "../../../utils/formFields/logIn"
 
 class Auth extends Component {
 

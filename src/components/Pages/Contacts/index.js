@@ -1,13 +1,12 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
-import {getContacts} from "../../actions/contacts";
-import Loader from "../Loader";
-import PersonCard from "../PersonCard";
+import {getContacts} from "../../../actions/contacts";
+import Loader from "../../Loader";
+import PersonCard from "../../PersonCard";
 
 class Contacts extends Component {
 
     componentDidMount() {
-        if(!localStorage.getItem('contacts'))
         this.props.getContacts()
     }
 
@@ -17,7 +16,7 @@ class Contacts extends Component {
         return (
                 <Loader flag={isFetching}>
                     <div className='contacts'>
-                        {contacts && contacts.map(el => <PersonCard user={el}/>)}
+                        {contacts ? contacts.map(el => <PersonCard user={el}/>) : null}
                     </div>
                 </Loader>
         );

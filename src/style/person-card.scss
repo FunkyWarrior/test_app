@@ -1,6 +1,6 @@
 .person-card {
   width: 45%;
-  min-width: 400px;
+  min-width: auto;
   border-radius: 20px;
   background: rgba(179,220,237,1);
   background: linear-gradient(135deg, rgba(179,220,237,1) 0%, rgba(188,224,238,1) 56%, rgba(41,184,229,1) 100%);
@@ -9,7 +9,7 @@
   box-shadow: 10px 10px 16px 0 rgba(0,0,0,0.75);
 
   &__img {
-    width: auto;
+    min-width: 30%;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
   }

@@ -31,6 +31,7 @@
   }
 
   &__img {
+    width: 80px;
     border-radius: 50%;
     cursor: pointer;
     box-shadow: 9px -6px 18px 1px rgba(0,0,0,0.75);
@@ -51,6 +52,6 @@ a {
 a:hover {color:#FF00FF;}
 a:active {color:#0000FF;}
 
-#current {
+.current {
   color: #8e888e;
 }

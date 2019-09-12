@@ -4,10 +4,6 @@ import {Switch} from "react-router-dom";
 import {route} from './utils/formFields/route'
 
 import {clearUser} from './actions/auth'
-import {clearContacts} from './actions/contacts'
-import {clearMainInfo} from './actions/main'
-
-import {checkHash} from './utils/funcs/funcs'
 
 import Header from "./components/Header";
 import {PrivateRoute} from "./components/PrivateRouter";
@@ -16,20 +12,11 @@ import {PrivateRoute} from "./components/PrivateRouter";
 
 export class App extends React.Component {
 
-    componentDidMount() {
-        window.addEventListener = ("hashchange", checkHash)
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener = ("hashchange", checkHash)
-    }
-
-
     render() {
-        const {user, clearUser, showHeader,clearContacts,clearMainInfo} = this.props;
+        const {user, clearUser, showHeader} = this.props;
         return (
             <>
-                {showHeader && <Header user={user} clearUser={clearUser} clearContacts={clearContacts} clearMainInfo={clearMainInfo}/>}
+                {showHeader && <Header user={user} clearUser={clearUser} />}
                 <main>
                     <div className='container'>
                         <Switch>
@@ -58,9 +45,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = {
-    clearUser,
-    clearContacts,
-    clearMainInfo
+    clearUser
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)

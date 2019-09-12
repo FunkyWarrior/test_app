@@ -1,28 +1,31 @@
-import * as types from "../actionsTypes/actionsTypes";
-import axios from 'axios'
+import {
+    GET_CONTACTS,
+    GET_CONTACTS_SUCCESS,
+    GET_CONTACTS_FAIL
+}  from "../actionsTypes/actionsTypes";
+
+import {userApi} from '../api'
 
 
-const getContactsRequest = payload => ({
-    type: types.GET_CONTACTS,
-    payload
+const getContactsRequest = () => ({
+    type: GET_CONTACTS
 });
 
 const getContactsRequestSuccess = payload => ({
-    type: types.GET_CONTACTS_SUCCESS,
+    type: GET_CONTACTS_SUCCESS,
     payload
 });
 
 const getContactsRequestFail = payload => ({
-    type: types.GET_CONTACTS_FAIL,
+    type: GET_CONTACTS_FAIL,
     payload
 });
 
 export const getContacts = () => {
     return async dispatch => {
-        dispatch(getContactsRequest(0));
+        dispatch(getContactsRequest());
         try {
-            const {data} = await axios.get("https://randomuser.me/api/?page=3&results=10&seed=abc");
-            localStorage.setItem('contacts',JSON.stringify(data.results));
+            const {data} = await userApi.get("?amount=25");
             dispatch(getContactsRequestSuccess(data))
         } catch(error) {
             dispatch(getContactsRequestFail(error))
@@ -30,9 +33,5 @@ export const getContacts = () => {
     }
 };
 
-export const clearContacts = payload => ({
-    type: types.CLEAR_CONTACTS,
-    payload
-});
 
 

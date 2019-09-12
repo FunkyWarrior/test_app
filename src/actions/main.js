@@ -1,28 +1,31 @@
-import * as types from "../actionsTypes/actionsTypes";
-import axios from 'axios'
+import {
+    GET_MAIN_INFO,
+    GET_MAIN_INFO_SUCCESS,
+    GET_MAIN_INFO_FAIL
+}  from "../actionsTypes/actionsTypes";
+
+import {mainPageApi} from '../api'
 
 
-const getMainInfoRequest = payload => ({
-    type: types.GET_MAIN_INFO,
-    payload
+const getMainInfoRequest = () => ({
+    type: GET_MAIN_INFO
 });
 
 const getMainInfoRequestSuccess = payload => ({
-    type: types.GET_MAIN_INFO_SUCCESS,
+    type: GET_MAIN_INFO_SUCCESS,
     payload
 });
 
 const getMainInfoRequestFail = payload => ({
-    type: types.GET_MAIN_INFO_FAIL,
+    type: GET_MAIN_INFO_FAIL,
     payload
 });
 
 export const getMainInfo = () => {
     return async dispatch => {
-        dispatch(getMainInfoRequest(0));
+        dispatch(getMainInfoRequest());
         try {
-            const {data} = await axios.get("https://api.publicapis.org/random");
-            localStorage.setItem('mainInfo',JSON.stringify(data.entries[0]))
+            const {data} = await mainPageApi.get();
             dispatch(getMainInfoRequestSuccess(data))
         } catch(error) {
             dispatch(getMainInfoRequestFail(error))
@@ -30,8 +33,4 @@ export const getMainInfo = () => {
     }
 };
 
-export const clearMainInfo = payload => ({
-    type: types.CLEAR_MAIN_INFO,
-    payload
-});
 

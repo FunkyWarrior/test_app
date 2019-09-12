@@ -1,41 +1,45 @@
-import * as types from "../actionsTypes/actionsTypes";
-import axios from 'axios'
+import {
+    GET_USER_BY_FACEBOOK,
+    GET_USER_BY_FACEBOOK_SUCCESS,
+    GET_USER_BY_FACEBOOK_FAIL,
+    CLEAR_USER,
+    CHANGE_SHOW_HEADER_FLAG
+} from "../actionsTypes/actionsTypes";
+import {userApi} from '../api'
 
 
-const getUserByFbRequest = payload => ({
-    type: types.GET_USER_BY_FACEBOOK,
-    payload
+const getUserByFbRequest = () => ({
+    type: GET_USER_BY_FACEBOOK
 });
 
 const getUserByFbRequestSuccess = payload => ({
-    type: types.GET_USER_BY_FACEBOOK_SUCCESS,
+    type: GET_USER_BY_FACEBOOK_SUCCESS,
     payload
 });
 
 const getUserByFbRequestFail = payload => ({
-    type: types.GET_USER_BY_FACEBOOK_FAIL,
+    type: GET_USER_BY_FACEBOOK_FAIL,
     payload
 });
 
 export const getUserByFb = () => {
     return async dispatch => {
-        dispatch(getUserByFbRequest(0));
+        dispatch(getUserByFbRequest());
         try {
-            const {data} = await axios.get("https://randomuser.me/api/");
-            localStorage.setItem('userKey',JSON.stringify(data.results[0]));
-            dispatch(getUserByFbRequestSuccess(data.results[0]))
+            const {data} = await userApi.get("?ext");
+            localStorage.setItem('userKey',JSON.stringify(data));
+            dispatch(getUserByFbRequestSuccess(data))
         } catch(error) {
             dispatch(getUserByFbRequestFail(error))
         }
     }
 };
 
-export const clearUser = payload => ({
-    type: types.CLEAR_USER,
-    payload
+export const clearUser = () => ({
+    type: CLEAR_USER
 });
 
 export const changeShowHeaderFlag = payload => ({
-    type: types.CHANGE_SHOW_HEADER_FLAG,
+    type: CHANGE_SHOW_HEADER_FLAG,
     payload
 });

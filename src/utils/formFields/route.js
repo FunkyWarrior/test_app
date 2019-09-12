@@ -1,5 +1,5 @@
 import React from 'react'
-import Main from '../../components/Pages/Main'
+import Main from '../../components/Pages/MainPage'
 import Profile from '../../components/Pages/Profile'
 import Contacts from '../../components/Pages/Contacts'
 import Auth from '../../components/Pages/Auth'
@@ -9,7 +9,7 @@ const PAGENOTFOUND = () => (
         <div className="info-wrap">
             <div className="page-not-found">
                 <h1>PAGE 404 NOT FOUND</h1>
-                <img src="./images/logo.png" alt="" />
+                <img src="./images/logo.png" alt="Oops" />
             </div>
         </div>
     </div>

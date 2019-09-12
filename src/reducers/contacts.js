@@ -1,7 +1,7 @@
 import * as types from '../actionsTypes/actionsTypes'
 
 const defaultState = {
-    contacts:localStorage.getItem('contacts') ? JSON.parse(localStorage.getItem('contacts')) : [],
+    contacts:null,
     error:null,
     isFetching:false,
 };
@@ -19,7 +19,7 @@ export const contactsReducer = (state = defaultState, action) => {
         case types.GET_CONTACTS_SUCCESS : {
             return {
                 ...state,
-                contacts:action.payload.results,
+                contacts:action.payload,
                 isFetching: false
             };
         }
@@ -28,14 +28,6 @@ export const contactsReducer = (state = defaultState, action) => {
             return {
                 ...state,
                 error:action.payload,
-                isFetching: false
-            };
-        }
-
-        case types.CLEAR_CONTACTS : {
-            return {
-                ...state,
-                contacts:[],
                 isFetching: false
             };
         }
