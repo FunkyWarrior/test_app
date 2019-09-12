@@ -5,30 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4449a8ba-6d02-415b-9d68-7f10370cf102" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/PersonCard/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/contacts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/contacts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actionsTypes/actionsTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actionsTypes/actionsTypes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Input.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Input/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Loader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Loader/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Pages/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Pages/Auth/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Pages/Contacts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Pages/Contacts/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Pages/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Pages/MainPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Pages/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Pages/Profile/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PersonCard.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PrivateRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PrivateRouter/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/contacts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/contacts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/person-card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/person-card.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/formFields/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/formFields/route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/funcs/funcs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/funcs/funcs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Pages/Contacts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Pages/Contacts/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -100,7 +78,7 @@
       <option name="presentableId" value="Default" />
       <updated>1568105140486</updated>
       <workItem from="1568105142116" duration="50402000" />
-      <workItem from="1568304936861" duration="10513000" />
+      <workItem from="1568304936861" duration="10856000" />
     </task>
     <servers />
   </component>

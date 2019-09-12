@@ -12,11 +12,10 @@ class Contacts extends Component {
 
     render() {
         const  {contacts,isFetching} = this.props;
-        console.log(contacts)
         return (
                 <Loader flag={isFetching}>
                     <div className='contacts'>
-                        {contacts ? contacts.map(el => <PersonCard user={el}/>) : null}
+                        {contacts ? contacts.map(el => <PersonCard key={contacts.indexOf(el)} user={el}/>) : null}
                     </div>
                 </Loader>
         );
